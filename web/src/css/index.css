@@ -116,7 +116,7 @@ div.searchbar {
     position: relative;
 }
 div.searchbar:empty::before {
-    content: 'Search/Paste contract or token address...';
+    content: 'Search/Paste marketplace contract address...';
     color: var(--theme-foreground-100);
 }
 

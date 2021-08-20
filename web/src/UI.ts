@@ -71,7 +71,27 @@ export class UI {
             let text = event.clipboardData.getData("text/plain");
             document.execCommand("insertText", false, text);
         });
-        this.searchBar.addEventListener("keyup", () => { this.updateMarketplacesListings(); });
+        this.searchBar.addEventListener("keydown", async (event) => {
+            if (event.key == "Enter") {
+                event.preventDefault();
+                if (ethers.utils.isAddress(this.searchBar.textContent)) try {
+                    let marketplace = this.api.getMarketplace(this.searchBar.textContent);
+
+                    window.history.pushState(<HistoryState> {
+                        currentPage: "tokens-listing",
+                        marketplaceAddress: marketplace.marketplaceContract
+                    }, "", "/market/" + marketplace.marketplaceContract);
+                    await this.openMarketplaceView(marketplace);
+                } catch (e) {
+                    console.error(e);
+                    this.marketplaceView?.remove();
+                    this.marketplaceView = null;
+                }
+            }
+        });
+        this.searchBar.addEventListener("keyup", (event) => {
+            this.updateMarketplacesListings();
+        });
         this.marketListingView.append(this.searchBar);
 
         this.featuredLabel = QuickElements.create("Not Connected :(", "featured-label");
