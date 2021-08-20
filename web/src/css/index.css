@@ -1,0 +1,227 @@
+@import url("./themes.css");
+@import url("./marketplace.css");
+@import url("./token.css");
+@import url("./listtoken.css");
+
+html, body {
+    margin: 0;
+    width: 100vw; height: 100vh;
+    overflow: hidden;
+    font-family: 'Roboto Mono', 'Consolas', monospace;
+    user-select: none;
+    font-size: 14px;
+}
+
+body {
+    --theme-background-100: #161616;
+    --theme-background-200: #1f1f1f;
+    --theme-background-300: #272727;
+    --theme-background-400: #2e2e2e;
+    --theme-background-500: #383838;
+
+    --theme-foreground-100: #a8a8a8;
+    --theme-foreground-200: #c4c4c4;
+    --theme-foreground-300: #e0e0e0;
+    --theme-foreground-400: #eeeeee;
+    --theme-foreground-500: #ffffff;
+
+    --accent-red-100: #d33838;
+    --accent-red-200: #df4e4e;
+    --accent-red-300: #ff9999;
+    --accent-red-400: #ffd7d7;
+
+    background-color: var(--theme-background-100);
+    color: var(--theme-foreground-400);
+}
+
+div.button {
+    -webkit-user-modify: read-only;
+    display: inline-block;
+    border-radius: 10000px;
+    padding: 12px 24px;
+    background-color: var(--button-bgcolor-local);
+    height: 19px;
+
+    --button-bgcolor-local: var(--theme-background-300);
+    --button-hover-bgcolor-local: var(--theme-background-400);
+}
+div.button:hover {
+    background-color: var(--button-hover-bgcolor-local);
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+div.label {
+    display: inline-block;
+}
+
+div.button.accent {
+    --button-bgcolor-local: var(--accent-red-100);
+    --button-hover-bgcolor-local: var(--accent-red-200);
+}
+
+div.topbar {
+    padding: 12px 18px;
+    height: 43px;
+    position: relative;
+    background-color: var(--theme-background-200);
+    box-shadow: 0 0 8px #000000;
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+
+div.topbar > div.button.connect {
+    float: right;
+}
+
+div.topbar > div.label.logo-banner {
+    font-size: 20px;
+    padding: 8px 5px;
+}
+div.topbar > div.label.logo-banner:hover {
+    color: var(--theme-foreground-500);
+}
+
+div.topbar > div.label.address,
+div.topbar > div.label.network {
+    float: right;
+    padding: 12px 15px;
+    color: var(--theme-foreground-100);
+}
+div.topbar > div.label.address {
+    color: var(--theme-foreground-500);
+}
+
+div.topbar > div.button {
+    float: right;
+}
+
+div.appview {
+    height: calc(100vh - 67px);
+    overflow-y: hidden;
+    position: relative;
+}
+
+div.searchbar {
+    background-color: var(--theme-background-400);
+    -webkit-user-modify: read-write;
+    outline: none;
+    color: var(--theme-foreground-500);
+    border-radius: 10000px;
+    box-shadow: 0 0 8px #000000;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+div.searchbar:empty::before {
+    content: 'Search/Paste contract or token address...';
+    color: var(--theme-foreground-100);
+}
+
+div.featured-label {
+    font-size: 24px;
+}
+
+div.listing {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fill, 240px);
+    grid-auto-rows: minmax(240px, auto);
+    grid-gap: 36px;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+/* Listing entry for both marketplaces and tokens */
+div.listing-entry {
+    background-color: var(--theme-background-200);
+    border-radius: 12px;
+    box-shadow: 0 0 8px #000000;
+    position: relative;
+}
+div.listing-entry > div.listing-bg {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+}
+div.listing-entry > div.listing-toplayer {
+    position: absolute;
+    width: calc(100% - 30px);
+    bottom: 0;
+    padding: 12px 15px;
+    background-color: #0000007f;
+    border-radius: 0 0 12px 12px;
+}
+div.listing-entry > div.listing-toplayer > div.label.name,
+div.listing-entry > div.listing-toplayer > div.label.description,
+div.listing-entry > div.listing-toplayer > div.label.address {
+    display: block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+div.listing-entry > div.listing-toplayer > div.label.name {
+    color: var(--theme-foreground-500);
+    font-weight: bold;
+}
+div.listing-entry > div.listing-toplayer > div.label.description {}
+div.listing-entry > div.listing-toplayer > div.label.address {
+    color: var(--theme-foreground-100);
+}
+
+div.listing-entry > div.price {
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    padding: 5px 12px;
+    background: #0000007f;
+    border-radius: 10000px;
+}
+
+div.appview > div.view {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: var(--theme-background-100);
+    overflow-y: scroll;
+}
+
+@media screen and (orientation: portrait) {
+    div.topbar > div.label.address,
+    div.topbar > div.label.network {
+        display: none;
+    }
+
+    div.topbar > div.button {
+        float: unset;
+        margin-left: 24px;
+    }
+    
+    div.appview > div.view {
+        padding: 0 24px;
+        width: calc(100% - 48px);
+    }
+
+    div.searchbar,
+    div.featured-label {
+        margin: 15px 15px;
+        padding: 15px 28px;
+    }
+}
+@media screen and (orientation: landscape) {
+    div.appview > div.view {
+        padding: 0 15%;
+        width: 70%;
+    }
+    
+    div.searchbar,
+    div.featured-label {
+        margin: 15px 100px;
+        padding: 15px 28px;
+    }
+}

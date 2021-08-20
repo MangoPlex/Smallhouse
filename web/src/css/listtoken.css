@@ -1,0 +1,39 @@
+div.appview > div.view.list-token {
+}
+
+div.appview > div.view.list-token > div.title,
+div.appview > div.view.list-token > div.step {
+    margin: 15px 24px;
+}
+
+div.appview > div.view.list-token > div.step {
+    margin: 15px 24px;
+}
+
+div.appview > div.view.list-token > div.title {
+    font-size: 20px;
+    color: var(--theme-foreground-300);
+}
+
+div.appview > div.view.list-token > div.note {
+    position: relative;
+    color: var(--theme-foreground-100);
+    margin-left: 48px;
+    margin-top: -12px;
+    margin-bottom: 12px;
+}
+
+div.appview > div.view.list-token > div.textbox {
+    margin: 15px 24px;
+    padding: 15px 24px;
+    background: var(--theme-background-400);
+    border-radius: 10000px;
+    margin-top: -6px;
+    box-shadow: 0 0 8px #000000;
+    -webkit-user-modify: read-write;
+    outline: none;
+}
+
+div.appview > div.view.list-token > div.button {
+    margin-left: 24px;
+}

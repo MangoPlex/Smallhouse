@@ -1,0 +1,63 @@
+div.appview > div.view.token > div.token-info {
+    padding: 18px 24px;
+}
+
+div.appview > div.view.token > div.token-info > div.token-image {
+    background-color: var(--theme-background-200);
+    border-radius: 12px;
+    box-shadow: 0 0 8px #000000;
+    position: relative;
+    overflow: hidden;
+}
+
+div.appview > div.view.token > div.token-info > div.token-metadata > div.label.name,
+div.appview > div.view.token > div.token-info > div.token-metadata > div.label.seller,
+div.appview > div.view.token > div.token-info > div.token-metadata > div.label.id {
+    display: block;
+    margin: 12px 18px;
+}
+
+div.appview > div.view.token > div.token-info > div.token-metadata > div.button { margin: 12px 18px; }
+
+div.appview > div.view.token > div.token-info > div.token-metadata > div.label.name {
+    font-size: 24px;
+}
+
+div.appview > div.view.token > div.token-info > div.token-metadata > div.label.seller,
+div.appview > div.view.token > div.token-info > div.token-metadata > div.label.id {
+    color: var(--theme-foreground-100);
+}
+
+div.appview > div.view.token > div.label.description {
+    padding: 18px 24px;
+    display: block;
+    margin-bottom: 50px;
+}
+
+@media screen and (orientation: landscape) {
+    div.appview > div.view.token > div.token-info > div.token-image {
+        width: 240px;
+        height: 240px;
+        display: inline-block;
+        margin-right: 15px;
+    }
+    
+    div.appview > div.view.token > div.token-info > div.token-metadata {
+        display: inline-block;
+        width: calc(100% - 240px - 15px);
+        height: 240px;
+        vertical-align: top;
+    }
+}
+@media screen and (orientation: portrait) {
+    div.appview > div.view.token > div.token-info > div.token-image {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+    }
+    div.appview > div.view.token > div.token-info > div.token-metadata {
+        padding-top: 15px;
+    }
+    div.appview > div.view.token > div.label.description {
+        padding: 8px 42px;
+    }
+}

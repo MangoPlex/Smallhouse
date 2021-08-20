@@ -1,0 +1,20 @@
+div.appview > div.view.marketplace > div.label.loading,
+div.appview > div.view.marketplace > div.label.notice {
+    display: block;
+    padding: 15px 24px;
+    margin: 0 auto;
+    text-align: center;
+    white-space: pre;
+}
+
+
+div.appview > div.view.marketplace > div.button.notice-continue {
+    margin: auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+div.appview > div.view.marketplace > div.searchbar.in-marketplace:empty::before {
+    content: 'Search token ID/token name/seller address...';
+}

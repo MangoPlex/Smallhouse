@@ -1,0 +1,31 @@
+body.dark-forest {
+    --theme-background-100: #000000;
+    --theme-background-200: #0e0e0e;
+    --theme-background-300: #1b1b1b;
+    --theme-background-400: #292929;
+    --theme-background-500: #5c5c5c;
+
+    --theme-foreground-100: #ffffff;
+    --theme-foreground-200: #ffffff;
+    --theme-foreground-300: #ffffff;
+    --theme-foreground-400: #ffffff;
+    --theme-foreground-500: #ffffff;
+
+    --accent-green-100: #00c407;
+    --accent-green-200: #00df07;
+    --accent-green-300: #00ec08;
+    --accent-green-400: #00ff08;
+}
+
+body.dark-forest > div.topbar {
+    padding: 12px 18px;
+    height: 43px;
+    position: relative;
+    background-color: var(--theme-background-100);
+}
+
+body.dark-forest > div.topbar > div.button.accent {
+    color: var(--theme-foreground-500);
+    --button-bgcolor-local: var(--theme-background-300);
+    --button-hover-bgcolor-local: var(--theme-background-400);
+}
