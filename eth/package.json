@@ -1,0 +1,19 @@
+{
+  "name": "@mangoplex/smallhouse-eth",
+  "version": "0.0.1",
+  "description": "Smallhouse Marketplace contracts",
+  "main": "",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node ."
+  },
+  "author": "nahkd123",
+  "license": "GPL-3.0-or-later",
+  "devDependencies": {
+    "@openzeppelin/contracts": "^4.3.0",
+    "@poanet/solidity-flattener": "^3.0.6",
+    "sol-merger": "^3.1.0"
+  }
+}

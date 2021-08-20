@@ -1,0 +1,2 @@
+Smallhouse Unique Token:             0x7cb9CAF369570C673CEc9b0C70c0bE69F56787DF
+Smallhouse Unique Token Marketplace: 0x0Fa55923f24Ee76C46382aaF87D92FB8818A5F3d
