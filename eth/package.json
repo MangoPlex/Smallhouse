@@ -12,7 +12,7 @@
   "author": "nahkd123",
   "license": "GPL-3.0-or-later",
   "devDependencies": {
-    "@openzeppelin/contracts": "^4.4.2",
+    "@openzeppelin/contracts": "^4.7.1",
     "@poanet/solidity-flattener": "^3.0.6",
     "sol-merger": "^3.1.0"
   }
